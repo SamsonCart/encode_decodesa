@@ -5,18 +5,18 @@ def encode_password():
     for digit in password:
         encoded_digit = str((int(digit) + 3) % 10)
         encoded_password += encoded_digit
-
     print("Your password has been encoded and stored!\n")
-
     return encoded_password
 
 
 def decode_password(coded_password):
-    #FIXME
-    decoded_password = None
+    decoded_password = ''
+    for digit in coded_password:
+        decoded_digit = str((int(digit) - 3) % 10)
+        decoded_password += decoded_digit
     return decoded_password
 
-print('is this working??')
+
 def main():
 
     option = int(input("'Please enter an option: "))
@@ -26,8 +26,8 @@ def main():
         if option == 1:
             coded_password = encode_password()
         elif option == 2:
-            pass
-            # decode_password()
+            decoded_password = decode_password(coded_password)
+            print(decoded_password)
         else:
             print("Invalid selection, try again.\n")
         option = int(input("Please enter an option: "))
