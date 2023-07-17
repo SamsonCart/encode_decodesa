@@ -26,7 +26,8 @@ def main():
         if option == 1:
             coded_password = encode_password()
         elif option == 2:
-            #decode_password()
+            pass
+            # decode_password()
         else:
             print("Invalid selection, try again.\n")
         option = int(input("Please enter an option: "))
