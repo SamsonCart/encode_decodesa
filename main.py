@@ -1,3 +1,11 @@
+def print_menu():
+    print('Menu\n'
+        '-------------\n'
+        '1. Encode\n'
+        '2. Decode\n'
+        '3. Quit\n')
+    
+
 def encode_password():
     password = input("Enter an 8-digit password: ")
     encoded_password = ""
@@ -19,6 +27,7 @@ def decode_password(coded_password):
 
 def main():
 
+    print_menu()
     option = int(input("'Please enter an option: "))
     coded_password = None
 
@@ -27,10 +36,11 @@ def main():
             coded_password = encode_password()
         elif option == 2:
             decoded_password = decode_password(coded_password)
-            print(decoded_password)
+            print(f'The encoded password is {coded_password}, and the original password is {decoded_password}.')
         else:
             print("Invalid selection, try again.\n")
-        option = int(input("Please enter an option: "))
+        print_menu()
+        option = int(input("'Please enter an option: "))
 
 
 
